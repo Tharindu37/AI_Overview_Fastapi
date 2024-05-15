@@ -3,6 +3,7 @@ from typing import Union
 import uvicorn
 from app.routes import movie_routes
 from app.routes import flower_routes
+from app.routes import cat_and_dog_routes
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
@@ -20,6 +21,7 @@ def read_root():
 
 app.include_router(movie_routes.router)
 app.include_router(flower_routes.router)
+app.include_router(cat_and_dog_routes.router)
 
 if __name__ == "__main__":
     # uvicorn.run(app, host="localhost", port=8002)
